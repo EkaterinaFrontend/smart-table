@@ -18,8 +18,8 @@ export const initPagination = (
     const limit = state.rowsPerPage;
     let page = state.page;
 
-    if (action)
-      switch (action.name) {
+    if (action){
+ switch (action.name) {
         case "prev":
           page = Math.max(1, page - 1);
           break; // переход на предыдущую страницу
@@ -33,6 +33,9 @@ export const initPagination = (
           page = pageCount;
           break; // переход на последнюю страницу
       }
+    }
+
+     
   };
 
   return Object.assign({}, query, {
