@@ -52,7 +52,7 @@ async function render(action) {
  
 
   try {
-    const { total, items } = await api.getRecords(query);
+    const { total, items } = await API.getRecords(query);
     updatePagination(total, query);
     sampleTable.render(items);
 
@@ -102,11 +102,15 @@ const applySorting = initSorting([
 const applySearching = initSearching(sampleTable.search.elements.search);
 
 async function init() {
-  const indexes = await api.getIndexes();
+  try{
+     const indexes = await API.getIndexes();
   console.log("Indexes loaded", indexes);
   updateIndexes(sampleTable.filter.elements, {
     searchBySeller: indexes.sellers,
   });
+  } catch (error) {
+    console.error("Ошибка при загрузке индексов:", error);
+  }
 }
 
 const appRoot = document.querySelector("#app");
