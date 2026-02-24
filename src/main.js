@@ -99,7 +99,7 @@ const applySorting = initSorting([
 //     searchBySeller: indexes.sellers                                    // для элемента с именем searchBySeller устанавливаем массив продавцов
 // });
 
-const applySearching = initSearching(sampleTable.search.elements.search);
+const applySearching = initSearching(sampleTable.search.elements.search.name);
 
 async function init() {
   try{
