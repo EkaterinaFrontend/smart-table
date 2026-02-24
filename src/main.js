@@ -67,7 +67,7 @@ const sampleTable = initTable(
     tableTemplate: "table",
     rowTemplate: "row",
     before: ["pagination"],
-    after: ["search", "header", "filter"],
+    after: ["filter", "header", "search"],
   },
   render,
 );
